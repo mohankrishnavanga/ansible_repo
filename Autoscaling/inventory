@@ -1,4 +1,6 @@
 [webservers]
+54.251.177.103
+54.254.140.5
 
 [webservers:vars]
 ansible_ssh_user=remoteAdmin
