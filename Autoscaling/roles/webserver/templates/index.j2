@@ -1,0 +1,7 @@
+<html>
+<head><title>Hello From Ansible!!</title></head>
+<body>
+<h1> Hello {{ ansible_fqdn }} or rather {{ ansible_hostname }} </h1>
+<p> The user: {{ ansible_env.SUDO_USER }} is running on {{ ansible_os_family }}
+</body>
+</html>

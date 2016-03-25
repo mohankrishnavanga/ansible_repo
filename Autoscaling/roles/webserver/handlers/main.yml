@@ -1,0 +1,8 @@
+---
+
+- name: Restart Apache  
+  service: name=httpd state=restarted
+
+- name: Create healthcheck
+  copy: content="" dest=/var/www/html/healthcheck.html
+
