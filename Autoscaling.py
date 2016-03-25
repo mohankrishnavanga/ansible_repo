@@ -33,7 +33,7 @@ print str
 print str1
 
 searchText = "[webservers]"
-for line in fileinput.FileInput("ansible_repo/Autoscaling/inventory",inplace=1):
+for line in fileinput.FileInput("Autoscaling/inventory",inplace=1):
   if searchText in line:
  	 line = line.replace(searchText, searchText + "\n" + str)
   sys.stdout.write(line)
