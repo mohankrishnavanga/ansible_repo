@@ -11,9 +11,6 @@
   notify:
   - Restart Apache
 
-- name: Create Directory
-  file: path={{ doc_root }} state=directory
-
 - name: Copy Site Files
   template: src=index.j2 dest={{ doc_root }}/index.html
   notify: 
