@@ -7,20 +7,22 @@ import re
 import subprocess
 
 #Variables
-playbook1 = 'webserver.yml'
-playbook2 = ''
-playbook3 = ''
+playbook1 = ""
+playbook2 = ""
+playbook3 = ""
 
 ec2 = boto.ec2.connect_to_region('ap-southeast-1')
 inst = boto.ec2.autoscale.connect_to_region('ap-southeast-1')
 
 grp = inst.get_all_groups(['ASG-1'])[0]
 inst_ids  = [i.instance_id for i in grp.instances]
-
+#str2 = "\n".join(inst_ids)
+#str3 = ",".join(inst_ids)
+#print "String2:"+str2
+#print "String3:"+str3
 res = ec2.get_all_reservations(inst_ids)
 str = ""
 str1 = ""
-
 if len(res) != 1:
  for i in range(len(res)):
   subres = res[i].instances
@@ -49,16 +51,6 @@ else:
   else:
    str1 = str1 + "," + subfam.ip_address
 
-print str
-print str1
+print "String:"+str
+print "String1:"+str1
 
-
-searchText = "[webservers]"
-for line in fileinput.FileInput("Autoscaling/inventory",inplace=1):
-  if searchText in line:
- 	 line = line.replace(searchText, searchText + "\n" + str)
-  sys.stdout.write(line)
-
-subprocess.call(['fab','-i','/home/centos/TestMKKey.pem','-H',str1,'test'])
-subprocess.call(['cd','Autoscaling']
-subprocess.call(['ansiblle-playbook',playbook1]
