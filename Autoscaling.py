@@ -26,28 +26,36 @@ if len(res) != 1:
   subres = res[i].instances
 #for i in range(len(subres)):
   subfam = subres[0]
-  if i == 0:
-   str = subfam.ip_address
+  if str == "":
+   if subfam.state == "running":
+      str = subfam.ip_address
   else:
-   str = str + "\n" + subfam.ip_address
+   if subfam.state == "running":
+    str = str + "\n" + subfam.ip_address
 #for i in range(len(subres)):
 #  subfam = subres[i]
-  if i == 0:
-   str1 = subfam.ip_address
+  if str == "":
+   if subfam.state == "running":
+    str1 = subfam.ip_address
   else:
-   str1 = str1 + "," + subfam.ip_address
+   if subfam.state == "running":
+    str1 = str1 + "," + subfam.ip_address
 else:
  subres = res[0].instances
  for i in range(len(subres)):
   subfam = subres[i]
-  if i == 0:
-   str = subfam.ip_address
+  if str == "":
+   if subfam.state == "running":
+    str = subfam.ip_address
   else:
-   str = str + "\n" + subfam.ip_address
-  if i == 0:
-   str1 = subfam.ip_address
+   if subfam.state == "running":
+    str = str + "\n" + subfam.ip_address
+  if str == "":
+    if subfam.state == "running":
+     str1 = subfam.ip_address
   else:
-   str1 = str1 + "," + subfam.ip_address
+   if subfam.state == "running":
+    str1 = str1 + "," + subfam.ip_address
 
 print str
 print str1
