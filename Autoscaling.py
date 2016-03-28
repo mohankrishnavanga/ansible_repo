@@ -60,5 +60,5 @@ for line in fileinput.FileInput("Autoscaling/inventory",inplace=1):
   sys.stdout.write(line)
 
 subprocess.call(['fab','-i','/home/centos/TestMKKey.pem','-H',str1,'test'])
-subprocess.call(['cd','Autoscaling',';','ansible-playbook','webserver.yml'])
+subprocess.call(['cd','Autoscaling','&&','ansible-playbook','webserver.yml'])
 
