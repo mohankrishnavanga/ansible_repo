@@ -34,7 +34,7 @@ if len(res) != 1:
     str = str + "\n" + subfam.ip_address
 #for i in range(len(subres)):
 #  subfam = subres[i]
-  if str == "":
+  if str1 == "":
    if subfam.state == "running":
     str1 = subfam.ip_address
   else:
@@ -50,7 +50,7 @@ else:
   else:
    if subfam.state == "running":
     str = str + "\n" + subfam.ip_address
-  if str == "":
+  if str1 == "":
     if subfam.state == "running":
      str1 = subfam.ip_address
   else:
